@@ -1,5 +1,8 @@
 import * as React from "react"
 
+import * as bs from "react-bootstrap"
+
+
 import {ChessBoard} from "../core/ChessBoard";
 import {ChessPiece} from "../core/ChessPiece";
 
@@ -12,34 +15,35 @@ export class ChessPieceView extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        console.log("MOunted")
+        console.log("Mounted")
     }
 
 
-    render_columns(columns: any) {
-        return <div>
+    render_columns(columns: any, rowIndex: number) {
+        return <bs.Container key={rowIndex} className={"row"}>
             {
-                columns.map((column: any | ChessPiece) => {
-                    return <div className={"box_a"}>
-                    </div>
+                columns.map((column: any | ChessPiece, index: number) => {
+                    return <bs.Col key={index} className={"box_a"}>
+                        {rowIndex}
+                    </bs.Col>
                 })
             }
-        </div>
+        </bs.Container>
     }
 
     render() {
         return (
-            <div>
+            <bs.Container>
                 {
-                    this.chessBoard.playBoardMatrix.map((row: any[]) => {
+                    this.chessBoard.playBoardMatrix.map((row: any[], index) => {
                         {
-                            return <div className={"box_a"} key={""}>
-                                {this.render_columns(row)}
-                            </div>
+                            return <bs.Row key={index}>
+                                {this.render_columns(row, index)}
+                            </bs.Row>
                         }
                     })
                 }
-            </div>
+            </bs.Container>
         )
     }
 }
