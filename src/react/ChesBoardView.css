@@ -1,0 +1,17 @@
+
+box {
+    width: 25px;
+    height: 25px;
+}
+
+.box_a box {
+    width: 25px;
+    height: 25px;
+    background-color: chocolate;
+}
+
+.box_b box {
+    width: 25px;
+    height: 25px;
+    background-color: darkgreen;
+}
