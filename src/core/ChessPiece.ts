@@ -1,5 +1,6 @@
 import {ChessPieceBehaviourParent} from "./ChessPieceBehaviours";
 
+
 export class ChessPiece {
 
     private behaviour: ChessPieceBehaviourParent
@@ -18,8 +19,12 @@ export class ChessPiece {
         return this.behaviour.icon
     }
 
-    GetMoveMatrix(): number[][] {
+    public GetMoveMatrix(): number[][] {
         return this.behaviour.moveMatrix
+    }
+
+    public IsWhite() {
+        return this.isWhite
     }
 
 

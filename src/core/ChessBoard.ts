@@ -1,7 +1,7 @@
 import {ChessPiece} from "./ChessPiece";
 
 import * as piece from "./ChessPieceBehaviours"
-import {BishopBehaviour, KnightBehaviour, PawnBehaviour, QueenBehaviour, RookBehaviour} from "./ChessPieceBehaviours";
+import {BishopBehaviour, KnightBehaviour, PawnBehaviour, QueenBehaviour, RookBehaviour, KingBehaviour} from "./ChessPieceBehaviours";
 
 export class ChessBoard {
 
@@ -9,14 +9,14 @@ export class ChessBoard {
 
     constructor() {
         this.playBoardMatrix = [
-            this.CreateFiguresArray(true),
-            this.CreatePawnArray(true),
+            this.CreateFiguresArray(false),
+            this.CreatePawnArray(false),
             this.CreateNullArray(),
             this.CreateNullArray(),
             this.CreateNullArray(),
             this.CreateNullArray(),
             this.CreatePawnArray(true),
-            this.CreateFiguresArray(false)
+            this.CreateFiguresArray(true)
         ]
     }
 
@@ -42,7 +42,7 @@ export class ChessBoard {
             new ChessPiece(new BishopBehaviour(), isWhite),
             new ChessPiece(new KnightBehaviour(), isWhite),
             new ChessPiece(new QueenBehaviour(), isWhite),
-            new ChessPiece(new QueenBehaviour(), isWhite),
+            new ChessPiece(new KingBehaviour(), isWhite),
             new ChessPiece(new KnightBehaviour(), isWhite),
             new ChessPiece(new BishopBehaviour(), isWhite),
             new ChessPiece(new RookBehaviour(), isWhite),

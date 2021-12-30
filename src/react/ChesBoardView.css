@@ -12,19 +12,10 @@
     justify-content: center;
 }
 
-box {
+.box {
+    position: absolute;
     width: 50px;
     height: 50px;
 }
 
-.box_a box {
-    width: 50px;
-    height: 50px;
-    background-color: chocolate;
-}
 
-.box_b box {
-    width: 50px;
-    height: 50px;
-    background-color: darkgreen;
-}

@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {ChessPieceView} from "./react/ChessPieceView";
+
+import {ChessBoardView} from "./react/ChessBoardView";
 
 function App() {
     return (
         <div className="App">
-            <ChessPieceView/>
+            <ChessBoardView/>
         </div>
     );
 }
